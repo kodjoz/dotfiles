@@ -1,0 +1,28 @@
+#/usr/bin/env bash
+function safedelete {
+    if command -v gio > /dev/null; then
+        for f in "$@"
+        do
+            gio trash -f "$f"
+        done
+    elif command -v gvfs-trash > /dev/null; then
+        for f in "$@"
+        do
+            gvfs-trash "$f"
+        done
+    elif [ -d "$TRASH_PATH" ]; then
+        for f in "$@"
+        do
+            mv "$f" "$TRASH_PATH"
+        done
+
+    else
+        for f in "$@"
+        do
+            # shellcheck disable=SC1012
+            \rm "$f"
+        done
+    fi
+}
+
+safedelete "$@"

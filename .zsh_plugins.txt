@@ -1,0 +1,15 @@
+romkatv/powerlevel10k
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+robbyrussell/oh-my-zsh path:plugins/themes
+robbyrussell/oh-my-zsh path:lib/history.zsh
+robbyrussell/oh-my-zsh path:lib/key-bindings.zsh
+robbyrussell/oh-my-zsh path:plugins/z
+robbyrussell/oh-my-zsh path:plugins/command-not-found
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/node
+lukechilds/zsh-nvm
+#mroth/evalcache
+

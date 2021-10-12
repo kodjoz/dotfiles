@@ -1,0 +1,10 @@
+# ls Aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Put files in trash bin instead of deleting them
+alias rm=$HOME/.local/bin/safedelete
+
+# Config dir for dotfiles
+alias config='/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

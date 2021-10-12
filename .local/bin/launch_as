@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+launch_as() {
+	local cmd_name=$1
+	shift
+	(time $@ || echo $cmd_name >> fail_$cmd_name.txt) 2>&1 > $cmd_name.txt
+}
