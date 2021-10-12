@@ -1,0 +1,18 @@
+#/usr/bin/env bash -e
+HASH_EXEC="sha256sum"
+
+# Generate a determistic MAC address based on domain name
+function macgen() {
+	check_hash
+
+        local fqdn="$1"
+        echo ${fqdn} | ${HASH_EXEC} | sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/'
+}
+
+function check_hash() {
+	which ${HASH_EXEC} >>/dev/null 2>&1 && return
+	echo "System must have ${HASH_EXEC} installed"
+	exit 1
+}
+
+macgen "$@"
