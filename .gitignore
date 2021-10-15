@@ -4,6 +4,7 @@
 # System files
 **/.Trash
 **/.DS_Store
+**/google-cloud-sdk/
 .cache
 .cups
 .oracle_jre_usage

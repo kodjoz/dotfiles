@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 function safedelete {
     if command -v gio > /dev/null; then
         for f in "$@"

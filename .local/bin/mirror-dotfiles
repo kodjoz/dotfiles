@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config push --mirror kodjoz@lab.kodjo.dev:/media/shares/shares/repos/dotfiles.git
