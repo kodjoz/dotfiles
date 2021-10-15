@@ -1,10 +1,10 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Times how long it takes your shell to load, tests 10 times
 
 function timeshell() {
   shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+  for i in $(seq 1 10); do /usr/bin/time "$shell" -i -c exit; done
 }
 
 timeshell "$@"
