@@ -6,8 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Load aliases file
-if [ -e $HOME/.aliases ]; then
-     source $HOME/.aliases
+if [ -e "$HOME"/.aliases ]; then
+     source "$HOME"/.aliases
 fi
 
 
@@ -19,16 +19,24 @@ export plugin_cache_dir="$HOME/.terraform.d/plugin-cache"
 
 # Lazy load command completion and colors
 autoload -Uz compinit colors
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit; colors
-else
-  compinit -C; colors
+if [ "$(uname -s)" = "Darwin" ]; then 
+	if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+		compinit; colors
+	else
+		compinit -C; colors
+	fi
+elif [ "$(uname -s)" = "Linux"  ]; then
+	if [ $(date +%s) != $(stat -c +%Y ~/.zcompdump) ]; then
+  		compinit; colors 
+	else
+  		compinit -C; colors
+	fi
 fi
 
 # Load plugins - this must come after declaring $ZSH and loading compinit
-source $HOME/.zsh_plugins.sh 
+source "$HOME"/.zsh_plugins.sh 
 # Original source for oh my zsh is replaced by zsh_plugins script from anitbody
-# source $ZSH/oh-my-zsh.sh
+# source "$ZSH"/oh-my-zsh.sh
 
 # Set options
 setopt AUTO_CD NO_CASE_GLOB EXTENDED_HISTORY SHARE_HISTORY APPEND_HISTORY INC_APPEND_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_REDUCE_BLANKS
