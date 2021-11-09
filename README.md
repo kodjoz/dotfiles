@@ -28,7 +28,7 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" > $HO
 - Clone the dotfiles to the new folder
 
 ```bash
-git clone --bare https://github.com/kodjoz/doftiles.git $HOME/.cfg/
+git clone --bare https://github.com/kodjoz/dotfiles.git $HOME/.cfg/
 ```
 
 - Move existing dotfiles to a backup folder
