@@ -19,24 +19,23 @@ echo ".cfg" >> $HOME/.gitignore
 
 ## Step 2: Clone the dotfiles
 
-- Clone the dotfiles to the new folder
-
-```bash
-git clone --bare https://github.com/kodjoz/doftiles.git $HOME/.cfg
-```
-
 - Create an alias for this repo
 
 ```bash
-alias config=`/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" > $HOME/.bash_aliases
+```
+
+- Clone the dotfiles to the new folder
+
+```bash
+git clone --bare https://github.com/kodjoz/dotfiles.git $HOME/.cfg/
 ```
 
 - Move existing dotfiles to a backup folder
 
 ```bash
 mkdir -p .config-backup && \
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} .config-backup/{}
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 ```
 
 - Check out the dotfile contents from the bare repository
@@ -49,4 +48,16 @@ config checkout
 
 ```bash
 config config --local status.showUntrackedFiles no
+```
+
+## Step 3: Set up Antibody
+
+- Get [Antibody](https://getantibody.github.io/install/)
+```bash
+curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
+```
+
+- Install plugins
+```bash
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 ```
