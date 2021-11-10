@@ -32,6 +32,7 @@
 .gem
 .npmrc
 .eslintrc
+.p10k.zsh
 
 #History
 .zsh_history

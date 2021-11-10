@@ -81,10 +81,10 @@ zstyle ':completion:*' verbose true
 
 # My ZSH Configurations
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
