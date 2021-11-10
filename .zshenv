@@ -16,4 +16,6 @@ fi
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export SUDO_EDITOR=rvim
 export LANG=en_US.UTF-8
+export GPG_TTY=$TTY
