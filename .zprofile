@@ -5,7 +5,7 @@
 # Note: this folder may or may not already exist on your system
 if [ $(uname -s) = 'Darwin' ]; then
     export TRASH_PATH=$HOME/.Trash
-elif [ $(uname -s) = (?i)linux ]; then
+elif [ $(uname -s) = Linux ]; then
     mkdir -p $HOME/.local/share/Trash/files
     export TRASH_PATH=$HOME/.local/share/Trash/files
 fi

@@ -32,6 +32,7 @@
 .gem
 .npmrc
 .eslintrc
+.zsh_plugins.sh
 
 #History
 .zsh_history

@@ -1,3 +1,6 @@
+# Set user umask
+umask 077
+
 # Set up zsh environment default path
 if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]]
 then
@@ -14,6 +17,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export VISUAL=vim
-export EDITOR="$VISUAL"
+export EDITOR=vim
+export VISUAL="$EDITOR"
+export SUDO_EDITOR=rvim
+export GPG_TTY="$TTY"
 export LANG=en_US.UTF-8
