@@ -4,8 +4,8 @@
 	name = Zach Kodjo
 	email = 36774583+kodjoz@users.noreply.github.com
 [credential]
-	helper = osxkeychain
 	helper = /usr/local/bin/git-credential-manager-core
+	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [init]
