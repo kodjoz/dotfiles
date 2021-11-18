@@ -33,6 +33,7 @@
 .npmrc
 .eslintrc
 .zsh_plugins.sh
+.p10k.zsh
 
 #History
 .zsh_history

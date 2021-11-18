@@ -12,24 +12,27 @@ These are my dotfiles. Created from [Atlassian's guide to creating a dotfiles re
 
 - Create a new folder in the home directory `mkdir -p $HOME/.cfg/`
 - Create a new `.gitignore` file
+- Create an `.aliases` file
 
 ```bash
-echo ".cfg" >> $HOME/.gitignore
+mkdir -p $HOME/.cfg && echo ".cfg" >> $HOME/.gitignore \
+touch $HOME/.aliases
+echo "source $HOME/.aliases" >> .zshrc
 ```
 
 ## Step 2: Clone the dotfiles
 
 - Create an alias for this repo
-
 ```bash
-echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" > $HOME/.bash_aliases
+echo "alias config=`/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" >> $HOME/.aliases
+exec zsh
 ```
 
 - Clone the dotfiles to the new folder
-
 ```bash
-git clone --bare https://github.com/kodjoz/dotfiles.git $HOME/.cfg/
+git clone --bare https://github.com/kodjoz/dotfiles.git $HOME/.cfg
 ```
+
 
 - Move existing dotfiles to a backup folder
 

@@ -4,7 +4,7 @@ umask 077
 # Set up zsh environment default path
 if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]]
 then
-	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+	export PATH="/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/usr/games"
 fi
 
 # set PATH so it includes user's private bin if it exists
