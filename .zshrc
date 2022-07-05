@@ -18,7 +18,7 @@ export UPDATE_ZSH_DAYS=13
 export plugin_cache_dir="$HOME/.terraform.d/plugin-cache"
 
 # Lazy load command completion and colors
-autoload -Uz compinit colors
+autoload -Uz compinit bashcompinit colors
 if [ "$(uname -s)" = "Darwin" ]; then 
 	if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 		compinit; colors
@@ -84,7 +84,9 @@ zstyle ':completion:*' verbose true
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kodjoz/.local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
